@@ -9,28 +9,55 @@
 <body>
     <div class="min-h-screen bg-black text-white">
         <!-- Navigation -->
-        <nav class="fixed w-full z-50 bg-black/90 px-4 py-3">
+ <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-black/90 px-4 py-3 border-b border-zinc-800">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <div class="flex items-center space-x-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                        <line x1="4" x2="20" y1="12" y2="12"/>
-                        <line x1="4" x2="20" y1="6" y2="6"/>
-                        <line x1="4" x2="20" y1="18" y2="18"/>
-                    </svg>
-                    <img src="IMAGENLOGO.png" alt="Snowflake Logo" class="h-10 w-10">
+                <!-- Left side: Menu, Logo, and Brand -->
+                <div class="flex items-center space-x-8">
+                    <button class="lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                            <line x1="4" x2="20" y1="12" y2="12"/>
+                            <line x1="4" x2="20" y1="6" y2="6"/>
+                            <line x1="4" x2="20" y1="18" y2="18"/>
+                        </svg>
+                    </button>
+                    <div class="flex items-center space-x-4">
+                        <img src="IMAGENLOGO.png" alt="ICE-CYL Logo" class="h-10 w-10">
+                        <span class="text-xl font-bold tracking-tight">ICE-CYL</span>
+                    </div>
+                    <!-- Desktop Navigation Menu -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-white hover:text-red-500 transition">Home</a>
+                        <a href="#" class="text-white hover:text-red-500 transition">Products</a>
+                        <a href="#" class="text-white hover:text-red-500 transition">Events</a>
+                        <a href="#" class="text-white hover:text-red-500 transition">About</a>
+                        <a href="#" class="text-white hover:text-red-500 transition">Contact</a>
+                    </div>
                 </div>
+                <!-- Right side: Search and Sign In -->
                 <div class="flex items-center space-x-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                        <circle cx="11" cy="11" r="8"/>
-                        <path d="m21 21-4.3-4.3"/>
-                    </svg>
-                    <button class="bg-white text-black px-4 py-2 rounded-full text-sm font-bold">
+                    <button class="text-white hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.3-4.3"/>
+                        </svg>
+                    </button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-red-700 transition">
                         Sign In
                     </button>
                 </div>
             </div>
+            <!-- Mobile Navigation Menu (Hidden by default) -->
+            <div class="lg:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 hidden">
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Home</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Products</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Events</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">About</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Contact</a>
+                </div>
+            </div>
         </nav>
-
         <!-- Hero Section -->
         <div class="relative h-screen">
             <img src="ESCENARIO.jpg" alt="Hero" class="w-full h-full object-cover">
