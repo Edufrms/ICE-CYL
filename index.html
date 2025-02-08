@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="min-h-screen bg-black text-white">
+        <!-- Audio oculto para el clic -->
+<audio id="click-sound">
+    <source src="Sonidolata.mp4" type="audio/mpeg">
+</audio> 
         <!-- Navigation -->
  <!-- Navigation -->
         <nav class="fixed w-full z-50 bg-black/90 px-4 py-3 border-b border-zinc-800">
@@ -27,11 +31,11 @@
                     </div>
                     <!-- Desktop Navigation Menu -->
                     <div class="hidden lg:flex items-center space-x-8">
-                        <a href="#" class="text-white hover:text-red-500 transition">Home</a>
-                        <a href="#products" class="text-white hover:text-red-500 transition">Products</a>
-                        <a href="#events" class="text-white hover:text-red-500 transition">Events</a>
-                        <a href="#tres-valles" class="text-white hover:text-red-500 transition">About</a>
-                        <a href="#" class="text-white hover:text-red-500 transition">Contact</a>
+                        <a href="#" class="text-white hover:text-red-500 transition" onclick="playSound()">Home</a>
+                        <a href="#products" class="text-white hover:text-red-500 transition" onclick="playSound()">Products</a>
+                        <a href="#events" class="text-white hover:text-red-500 transition" onclick="playSound()">Events</a>
+                        <a href="#tres-valles" class="text-white hover:text-red-500 transition" onclick="playSound()">About</a>
+                        <a href="#" class="text-white hover:text-red-500 transition" onclick="playSound()">Contact</a>
                     </div>
                 </div>
                 <!-- Right side: Search and Sign In -->
@@ -50,11 +54,11 @@
             <!-- Mobile Navigation Menu (Hidden by default) -->
             <div class="lg:hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 hidden">
-                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Home</a>
-                    <a href="#products" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Products</a>
-                    <a href="#events" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Events</a>
-                    <a href="#tres-valles" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">About</a>
-                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition">Contact</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Home</a>
+                    <a href="#products" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Products</a>
+                    <a href="#events" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Events</a>
+                    <a href="#tres-valles" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">About</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Contact</a>
                 </div>
             </div>
         </nav>
@@ -159,6 +163,14 @@
             </div>
         </div>
     </div>
+             <!-- JavaScript para reproducir el sonido -->
+     <script>
+        function playSound() {
+            let sound = document.getElementById("click-sound");
+            sound.volume = 0.5; // Ajusta el volumen (0.0 a 1.0)
+            sound.play();
+        }
+    </script>
 </body>
 </html>
 <main>
