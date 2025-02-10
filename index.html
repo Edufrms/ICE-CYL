@@ -6,6 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FESTIVAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Estilos para personalizar la barra de scroll -->
+    <style>
+        /* Personalizar la barra de scroll globalmente */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff4d4d;
+        }
+
+        /* Personalizar solo la sección de eventos */
+        #events::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        #events::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        #events::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+
+        #events::-webkit-scrollbar-thumb:hover {
+            background: #ff4d4d;
+        }
+    </style>
 </head>
 <body>
     <div class="min-h-screen bg-black text-white">
