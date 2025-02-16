@@ -132,11 +132,11 @@
                 <!-- Story 1 -->
                 <div class="group cursor-pointer">
                     <div class="relative overflow-hidden">
-                        <img src="ICE-CYL.jpg" alt="Racing Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
+                        <img src="latablu.jpeg" alt="Racing Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
                             <div class="absolute bottom-0 p-4">
-                                <span class="text-sm text-red-500 font-bold">ICE-CYL</span>
-                                <h3 class="text-xl font-bold mt-1">Energia de auto-arrefecimento</h3>
+                                <span class="text-sm text-red-500 font-bold">ICE-CYL Mirtilo</span>
+                                <h3 class="text-xl font-bold mt-1">Mirtilo com auto-arrefecimento</h3>
                             </div>
                         </div>
                     </div>
@@ -156,26 +156,73 @@
                 <!-- Story 3 -->
                 <div class="group cursor-pointer">
                     <div class="relative overflow-hidden">
-                        <img src="Hotcyl.jpg" alt="Biking Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
+                        <img src="latacherry.jpg" alt="Biking Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
                             <div class="absolute bottom-0 p-4">
-                                <span class="text-sm text-red-500 font-bold">HOT-CYL</span>
-                                <h3 class="text-xl font-bold mt-1">Energia de auto-aquecimento</h3>
+                                <span class="text-sm text-red-500 font-bold">ICE-CYL Cereja</span>
+                                <h3 class="text-xl font-bold mt-1">Cereja com auto-arrefecimento</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <button class="inline-flex items-center space-x-2 text-red-500 font-bold hover:text-red-400 transition">
-                    <span>Ver todos os produtos</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                        <path d="M5 12h14"/>
-                        <path d="m12 5 7 7-7 7"/>
-                    </svg>
-                </button>
+            <!-- Botón para desplegar más productos -->
+<div class="mt-8 text-center">
+    <button id="viewMoreBtn" onclick="toggleProducts()" class="inline-flex items-center space-x-2 text-red-500 font-bold hover:text-red-400 transition">
+        <span>Ver todos os produtos</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+        </svg>
+    </button>
+</div>
+
+<!-- Productos ocultos al inicio -->
+<div id="extraProducts" class="hidden mt-8 flex space-x-6 px-4 justify-center">
+    
+    <!-- Extra Product 1 -->
+    <div class="min-w-[300px]">
+        <div class="group cursor-pointer relative overflow-hidden rounded-lg">
+            <img src="latamiel.jpeg" alt="Energy Boost" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-4">
+                    <span class="text-sm text-red-500 font-bold">ICE-CYL Mel</span>
+                    <h3 class="text-xl font-bold mt-1">Mel com auto-arrefecimento</h3>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!-- Extra Product 2 -->
+    <div class="min-w-[300px]">
+        <div class="group cursor-pointer relative overflow-hidden rounded-lg">
+            <img src="latabasica.jpeg" alt="Hydro Cool" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-4">
+                    <span class="text-sm text-red-500 font-bold">ICE-CYL Bebida energética</span>
+                    <h3 class="text-xl font-bold mt-1">Energia com auto-arrefecimento</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript para mostrar/ocultar productos -->
+<script>
+    function toggleProducts() {
+        let extraProducts = document.getElementById("extraProducts");
+        let buttonText = document.getElementById("viewMoreBtn").querySelector("span");
+
+        if (extraProducts.classList.contains("hidden")) {
+            extraProducts.classList.remove("hidden");
+            buttonText.textContent = "Hide Products";
+        } else {
+            extraProducts.classList.add("hidden");
+            buttonText.textContent = "View All Products";
+        }
+    }
+</script>
         <!-- Events Section -->
          <div id="events" class="bg-zinc-900 py-16">
         <div class="bg-zinc-900 py-16">
