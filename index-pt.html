@@ -48,6 +48,17 @@
         }
     </style>
 </head>
+<script>
+    function openVideo() {
+        document.getElementById("videoModal").classList.remove("hidden");
+        document.getElementById("videoPlayer").play();
+    }
+
+    function closeVideo() {
+        document.getElementById("videoModal").classList.add("hidden");
+        document.getElementById("videoPlayer").pause();
+    }
+</script>
 <body>
     <div class="min-h-screen bg-black text-white">
         <!-- Audio oculto para el clic -->
@@ -115,8 +126,8 @@
                     <div class="max-w-2xl">
                         <h1 class="text-5xl font-bold mb-4">O futuro das bebidas</h1>
                         <p class="text-xl mb-6">De Castilla y León</p>
-                        <button class="bg-red-600 text-white px-6 py-3 rounded-full font-bold flex items-center space-x-2 hover:bg-red-700 transition">
-                            <span>Ver agora</span>
+                        <button onclick="openVideo()" class="bg-red-600 text-white px-6 py-3 rounded-full font-bold flex items-center space-x-2 hover:bg-red-700 transition">
+                            <span>Watch Now</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
                                 <path d="m9 18 6-6-6-6"/>
                             </svg>
@@ -125,7 +136,16 @@
                 </div>
             </div>
         </div>
-
+<!-- Modal de video (inicialmente oculto) -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden">
+    <div class="relative bg-black p-4 rounded-lg w-full max-w-3xl">
+        <button onclick="closeVideo()" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+        <video id="videoPlayer" class="w-full" controls>
+            <source src="videoyou.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
         <!-- Featured Stories Grid -->
         <div id="products" class="bg-zinc-900 py-16">
         <div class="max-w-7xl mx-auto px-4 py-16">
