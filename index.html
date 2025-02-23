@@ -48,6 +48,17 @@
         }
     </style>
 </head>
+<script>
+    function openVideo() {
+        document.getElementById("videoModal").classList.remove("hidden");
+        document.getElementById("videoPlayer").play();
+    }
+
+    function closeVideo() {
+        document.getElementById("videoModal").classList.add("hidden");
+        document.getElementById("videoPlayer").pause();
+    }
+</script>
 <body>
     <div class="h-full bg-black text-white">
         <!-- Audio oculto para el clic -->
@@ -126,7 +137,16 @@
                 </div>
             </div>
         </div>
-
+<!-- Modal de video (inicialmente oculto) -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden">
+    <div class="relative bg-black p-4 rounded-lg w-full max-w-3xl">
+        <button onclick="closeVideo()" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+        <video id="videoPlayer" class="w-full" controls>
+            <source src="videoyou.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
         <!-- Featured Stories Grid -->
         <div id="products" class="bg-zinc-900 py-16">
         <div class="max-w-7xl mx-auto px-4 py-16">
