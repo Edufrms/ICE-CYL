@@ -76,7 +76,58 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(214, 0, 0, 0.5); /* Sombra roja */
         }
+/* Ocultar todos los artículos excepto el primero */
+ section {
+            display: none;
+        }
 
+        section.active {
+            display: block;
+        }
+
+        /* Estilos para los botones de navegación */
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            background-color: #d60000;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(214, 0, 0, 0.7);
+        }
+
+        .nav-button:hover {
+            background-color: #a30000;
+            box-shadow: 0 0 15px rgba(214, 0, 0, 1);
+        }
+
+        @media (max-width: 600px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                bottom: 10px;
+            }
+
+            .nav-button {
+                width: 80%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
         article h2 {
             font-size: 2.2em;
             color: #d60000; /* Rojo */
@@ -228,7 +279,7 @@
     </header>
 
     <main>
-        <article>
+        <section>
             <h2>The Best Drinks for Music Festivals in 2024</h2>
 
             <p><strong>Introduction</strong></p>
@@ -275,8 +326,8 @@
                 <span class="resaltado">ICECYL</span>, he self-cooling drink made for live music lovers.
             </p>
             <p class="resaltado">📍 Now available at major festivals across Europe—try it and feel the difference!</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>How to Stay Hydrated and Energised at a 12-Hour Festival</h2>
 
             <p><strong>Introduction</strong></p>
@@ -338,8 +389,8 @@
                 <span class="resaltado">ICECYL</span>, offers the perfect solution: an isotonic, energy-boosting, self-cooling drink designed for festival-goers.
             </p>
             <p class="resaltado">📍 Look for it at your favourite festivals and experience the drink that’s revolutionising live music events in Europe</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>ICECYL: The Revolution of Self-Cooling Energy Drinks</h2>
 
             <p><strong>Introduction</strong></p>
@@ -387,8 +438,8 @@
                 ICECYL isn’t just a drink—it’s a  <span class="resaltado">revolution</span>. If you love music, energy, and innovation, this is the ultimate festival drink.
             </p>
             <p class="resaltado">📍 Follow us on social media to find out which festival will feature ICECYL next!</p>
-        </article>
-         <article>
+        </section>
+         <section>
             <h2>Recipe: "Ice-Cyl Festival Fusion Mocktail"</h2>
 
             <p><strong>Ingredients:</strong></p>
@@ -417,8 +468,44 @@
 
             <h3><span class="resaltado">The Ice-Cyl Festival Fusion Mocktail</span> is the ultimate drink for those who love a perfect balance of energy, flavour, and refreshment. Whether you’re at a festival, a party, or just unwinding, this mocktail delivers an unforgettable experience. Give this mocktail a try and enjoy a drink that keeps up with your energy!</h3>
             <p>
-                </article>
+                </section>
             </main>
+        <!-- Botones de navegación -->
+<div class="nav-buttons">
+    <button id="prev-article" class="nav-button">⟨ Anterior</button>
+    <button id="next-article" class="nav-button">Siguiente ⟩</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("main section");
+        let currentIndex = 0;
+
+        function showArticle(index) {
+            if (index >= 0 && index < sections.length) {
+                sections.forEach((section, i) => {
+                    section.classList.toggle("active", i === index);
+                });
+                currentIndex = index;
+            }
+        }
+
+        document.getElementById("prev-article").addEventListener("click", function () {
+            if (currentIndex > 0) {
+                showArticle(currentIndex - 1);
+            }
+        });
+
+        document.getElementById("next-article").addEventListener("click", function () {
+            if (currentIndex < sections.length - 1) {
+                showArticle(currentIndex + 1);
+            }
+        });
+
+        // Mostrar solo el primer artículo al cargar la página
+        showArticle(0);
+    });
+</script>
 
     </body>
     </html>
