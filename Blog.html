@@ -76,7 +76,58 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(214, 0, 0, 0.5); /* Sombra roja */
         }
+/* Ocultar todos los artículos excepto el primero */
+ section {
+            display: none;
+        }
 
+        section.active {
+            display: block;
+        }
+
+        /* Estilos para los botones de navegación */
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            background-color: #d60000;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(214, 0, 0, 0.7);
+        }
+
+        .nav-button:hover {
+            background-color: #a30000;
+            box-shadow: 0 0 15px rgba(214, 0, 0, 1);
+        }
+
+        @media (max-width: 600px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                bottom: 10px;
+            }
+
+            .nav-button {
+                width: 80%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
         article h2 {
             font-size: 2.2em;
             color: #d60000; /* Rojo */
@@ -228,7 +279,7 @@
     </header>
 
     <main>
-        <article>
+        <section>
             <h2>As melhores bebidas para festivais de música em 2024</h2>
 
             <p><strong>Introdução</strong></p>
@@ -276,8 +327,8 @@
                 <span class="resaltado">ICECYL</span>, a primeira bebida auto-refrigerante pensada para os amantes da música ao vivo.
             </p>
             <p class="resaltado">📍 Disponível nos principais festivais da Europa—prove e sinta a diferença!</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>Como se manter hidratado e cheio de energia num festival de 12 horas</h2>
 
             <p><strong>Introdução</strong></p>
@@ -338,8 +389,8 @@
                 <span class="resaltado">ICECYL</span>, é a solução ideal: uma bebida isotónica, energética e auto-refrigerante, perfeita para festivais.
             </p>
             <p class="resaltado">📍 Encontre-a no seu festival preferido e experimente a bebida que está a revolucionar os concertos na Europa!</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>ICECYL: a revolução das bebidas energéticas auto-refrigerantes</h2>
 
             <p><strong>Introdução</strong></p>
@@ -387,8 +438,8 @@
                 <span class="resaltado">ICECYL</span> não é apenas uma bebida, é uma revolução. Se é apaixonado por música, energia e diversão sem limites, esta é a bebida ideal para si.
             </p>
             <p class="resaltado">📍 Siga-nos nas redes sociais para descobrir em que festival poderá prová-la primeiro!</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>Receita: "Ice-Cyl Festival Fusion Mocktail"</h2>
 
             <p><strong>Ingredientes:</strong></p>
@@ -417,8 +468,43 @@
 
             <h3>Este mocktail "Ice-Cyl Festival Fusion Mocktail" é a escolha perfeita para quem busca uma experiência inovadora e revigorante. Cada gole deste mocktail é uma celebração de sabores e frescor, ideal para animar qualquer ocasião. Aproveite o seu mocktail e sinta a energia e a leveza que só um mocktail bem preparado pode oferecer!</h3>
             <p>
-                </article>
+                </section>
             </main>
+<!-- Botones de navegación -->
+<div class="nav-buttons">
+    <button id="prev-article" class="nav-button">⟨ Anterior</button>
+    <button id="next-article" class="nav-button">Siguiente ⟩</button>
+</div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("main section");
+        let currentIndex = 0;
+
+        function showArticle(index) {
+            if (index >= 0 && index < sections.length) {
+                sections.forEach((section, i) => {
+                    section.classList.toggle("active", i === index);
+                });
+                currentIndex = index;
+            }
+        }
+
+        document.getElementById("prev-article").addEventListener("click", function () {
+            if (currentIndex > 0) {
+                showArticle(currentIndex - 1);
+            }
+        });
+
+        document.getElementById("next-article").addEventListener("click", function () {
+            if (currentIndex < sections.length - 1) {
+                showArticle(currentIndex + 1);
+            }
+        });
+
+        // Mostrar solo el primer artículo al cargar la página
+        showArticle(0);
+    });
+</script>
     </body>
     </html>
