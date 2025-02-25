@@ -228,7 +228,8 @@
     </header>
 
     <main>
-        <article>
+        <!-- Artículo 1 (el primero en mostrarse) -->
+        <section class="active">
             <h2>I migliori drink per i festival musicali del 2024</h2>
 
             <p><strong>Introduzione</strong></p>
@@ -276,8 +277,8 @@
                 <span class="resaltado">ICECYL</span>, la prima bevanda autorefrigerante pensata per gli amanti della musica dal vivo.
             </p>
             <p class="resaltado">📍 Disponibile nei principali festival in Europa—provatela e scoprite la differenza!</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>Come rimanere idratati ed energici durante un festival di 12 ore</h2>
 
             <p><strong>Introduzione</strong></p>
@@ -339,8 +340,8 @@
                 <span class="resaltado">ICECYL</span>, è la soluzione ideale: una bevanda isotonica, energetica e autorefrigerante, perfetta per i festival.
             </p>
             <p class="resaltado">📍 Cercatela nel vostro festival preferito e provate la bevanda che sta cambiando il mondo dei concerti in Europa!</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h2>ICECYL: la rivoluzione delle bevande energetiche autorefrigeranti</h2>
 
             <p><strong>Introduzione</strong></p>
@@ -388,8 +389,8 @@
                 ICECYL non è solo una bevanda, è una vera rivoluzione. Se siete appassionati di musica, adrenalina e divertimento senza limiti, questa è la bevanda che fa per voi.
             </p>
             <p class="resaltado">📍 Seguiteci sui social per scoprire in quale festival potrete provarla per primi</p>
-        </article>
-        <article>
+        </seection>
+        <section>
             <h2>Ricetta: "Ice-Cyl Festival Fusion Mocktail"</h2>
 
             <p><strong>Ingredienti:</strong></p>
@@ -418,8 +419,42 @@
 
             <h3>Questa ricetta crea un mocktail<span class="resaltado">"Ice-Cyl Festival Fusion"</span> perfetto per chi cerca un'esperienza di gusto unica, combinando sapore, freschezza ed energia in ogni sorso. Ogni fase del processo esalta il carattere del mocktail, rendendolo ideale per ogni occasione</h3>
             <p>
-                </article>
+                </section>
             </main>
+<!-- Botones de navegación -->
+<div class="nav-buttons">
+    <button id="prev-article" class="nav-button">⟨ Precedente</button>
+    <button id="next-article" class="nav-button">Avanti ⟩</button>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("main section");
+        let currentIndex = 0;
 
+        function showArticle(index) {
+            if (index >= 0 && index < sections.length) {
+                sections.forEach((section, i) => {
+                    section.classList.toggle("active", i === index);
+                });
+                currentIndex = index;
+            }
+        }
+
+        document.getElementById("prev-article").addEventListener("click", function () {
+            if (currentIndex > 0) {
+                showArticle(currentIndex - 1);
+            }
+        });
+
+        document.getElementById("next-article").addEventListener("click", function () {
+            if (currentIndex < sections.length - 1) {
+                showArticle(currentIndex + 1);
+            }
+        });
+
+        // Mostrar solo el primer artículo al cargar la página
+        showArticle(0);
+    });
+</script>
     </body>
     </html>
